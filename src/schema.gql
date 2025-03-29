@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input BiometricInput {
+  biometricKey: String!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Mutation {
+  bioLogin(biometricInput: BiometricInput!): SignResponse!
+  createUser(createUserInput: CreateUserInput!): User!
+  login(loginInput: SignInput!): SignResponse!
+  removeUser(id: Int!): User!
+  signup(signInput: SignInput!): SignResponse!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  profile: User!
+  user(id: Int!): User!
+}
+
+input SignInput {
+  email: String!
+  password: String!
+}
+
+type SignResponse {
+  accessToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+type User {
+  biometricKey: String!
+  email: String!
+  id: String!
+}
